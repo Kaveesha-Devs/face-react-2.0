@@ -1191,7 +1191,7 @@ async function updateOption() {
       toast('Failed to update option.', 'error');
     }
   } catch(e) {
-    toast('Network error. Please try again.', 'error');
+    handleFetchError(e, 'updateOption');
   }
 }
 
@@ -1218,7 +1218,7 @@ async function deleteOption(id) {
       toast('Failed to delete option.', 'error');
     }
   } catch(e) {
-    toast('Network error. Please try again.', 'error');
+    handleFetchError(e, 'deleteOption');
   }
 }
 
@@ -1242,7 +1242,7 @@ async function toggleOptionStatus(id, currentActive) {
       toast('Failed to update status.', 'error');
     }
   } catch(e) {
-    toast('Network error. Please try again.', 'error');
+    handleFetchError(e, 'toggleOptionStatus');
   }
 }
 
@@ -1370,7 +1370,7 @@ async function updateDepartment() {
       toast('Failed to update department.', 'error');
     }
   } catch(e) {
-    toast('Network error. Please try again.', 'error');
+    handleFetchError(e, 'updateDepartment');
   }
 }
 
@@ -1397,7 +1397,7 @@ async function deleteDepartment(id) {
       toast('Failed to delete department.', 'error');
     }
   } catch(e) {
-    toast('Network error. Please try again.', 'error');
+    handleFetchError(e, 'deleteDepartment');
   }
 }
 
@@ -1423,7 +1423,7 @@ async function toggleDepartmentStatus(id, currentActive) {
       toast('Failed to update status.', 'error');
     }
   } catch(e) {
-    toast('Network error. Please try again.', 'error');
+    handleFetchError(e, 'toggleDepartmentStatus');
   }
 }
 
@@ -1556,7 +1556,7 @@ async function updateSection() {
       toast('Failed to update section.', 'error');
     }
   } catch(e) {
-    toast('Network error. Please try again.', 'error');
+    handleFetchError(e, 'updateSection');
   }
 }
 
@@ -1582,7 +1582,7 @@ async function deleteSection(id) {
       toast('Failed to delete section.', 'error');
     }
   } catch(e) {
-    toast('Network error. Please try again.', 'error');
+    handleFetchError(e, 'deleteSection');
   }
 }
 
@@ -1606,7 +1606,7 @@ async function toggleSectionStatus(id, currentActive) {
       toast('Failed to update status.', 'error');
     }
   } catch(e) {
-    toast('Network error. Please try again.', 'error');
+    handleFetchError(e, 'toggleSectionStatus');
   }
 }
 
@@ -1645,6 +1645,10 @@ async function refreshDropdowns() {
 }
 
 // Helpers
+function handleFetchError(e, context) {
+  console.error(`${context} error:`, e);
+  toast(`Error (${context}): ${e.message}`, 'error');
+}
 function escHtml(str) {
   return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
