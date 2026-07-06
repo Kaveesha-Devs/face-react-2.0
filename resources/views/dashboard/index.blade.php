@@ -48,8 +48,8 @@ button{font-family:'Inter',sans-serif;cursor:pointer}
 /* ═══════════════════════════════════════════════════ */
 /* MAIN */
 /* ═══════════════════════════════════════════════════ */
-.main{flex:1;display:flex;flex-direction:column;min-height:100vh}
-.topbar{background:rgba(26,29,39,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;z-index:10;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.main{flex:1;display:flex;flex-direction:column;min-height:100vh;overflow:hidden}
+.topbar{background:rgba(26,29,39,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:8px 24px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;z-index:10;box-shadow:0 4px 20px rgba(0,0,0,.1)}
 .topbar-left h1{font-size:18px;font-weight:700;color:var(--text)}
 .topbar-left p{font-size:11px;color:var(--muted);margin-top:2px}
 .topbar-right{display:flex;align-items:center;gap:10px}
@@ -60,9 +60,9 @@ button{font-family:'Inter',sans-serif;cursor:pointer}
 .refresh-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.5s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 /* CONTENT */
-.content{flex:1;overflow-y:auto;padding:16px 24px;padding-bottom:30px}
+.content{flex:1;overflow-y:auto;padding:12px 20px;padding-bottom:16px}
 /* FILTER BAR */
-.filter-bar{background:rgba(26,29,39,0.6);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius);padding:12px 16px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.filter-bar{background:rgba(26,29,39,0.6);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius);padding:8px 14px;margin-bottom:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;box-shadow:0 4px 20px rgba(0,0,0,.15)}
 .filter-group{display:flex;flex-direction:column;gap:5px}
 .filter-group label{font-size:10px;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.5px}
 select,input[type=date],input[type=number]{background:var(--surface2);border:1px solid var(--border2);border-radius:6px;padding:7px 10px;color:var(--text);font-size:12px;font-family:'Inter',sans-serif;outline:none;transition:.15s;min-width:120px;height:32px}
@@ -76,8 +76,8 @@ select option{background:var(--surface2)}
 .btn-reset{background:transparent;color:var(--muted);border:1px solid var(--border2);border-radius:6px;padding:7px 12px;font-size:12px;cursor:pointer;transition:.2s ease;height:32px}
 .btn-reset:hover{color:var(--text);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.03)}
 /* STAT CARDS */
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px}
-.stat-card{background:linear-gradient(145deg, rgba(26,29,39,0.9), rgba(26,29,39,0.4));backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:16px 18px;transition:.3s cubic-bezier(0.4, 0, 0.2, 1);box-shadow:0 8px 30px rgba(0,0,0,.15);position:relative;overflow:hidden}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}
+.stat-card{background:linear-gradient(145deg, rgba(26,29,39,0.9), rgba(26,29,39,0.4));backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:12px 14px;transition:.3s cubic-bezier(0.4, 0, 0.2, 1);box-shadow:0 8px 30px rgba(0,0,0,.15);position:relative;overflow:hidden}
 .stat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,255,255,.05) 0%, transparent 100%);opacity:0;transition:.3s}
 .stat-card:hover::before{opacity:1}
 .stat-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.25)}
@@ -88,9 +88,9 @@ select option{background:var(--surface2)}
 .stat-value.green{color:var(--green)}
 .stat-value.blue{color:var(--blue)}
 /* GRID 2-COL */
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-.grid-3{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-bottom:16px}
-.card{background:linear-gradient(135deg, rgba(26,29,39,0.85), rgba(26,29,39,0.5));backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius);padding:18px;box-shadow:0 10px 35px rgba(0,0,0,.2);transition:.3s}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.grid-3{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-bottom:10px}
+.card{background:linear-gradient(135deg, rgba(26,29,39,0.85), rgba(26,29,39,0.5));backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius);padding:14px;box-shadow:0 10px 35px rgba(0,0,0,.2);transition:.3s}
 .card:hover{border-color:rgba(255,255,255,.08);box-shadow:0 14px 45px rgba(0,0,0,.25)}
 .card-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
 .card-title span{font-size:10px;font-weight:400;color:var(--dim)}
@@ -123,7 +123,7 @@ select option{background:var(--surface2)}
 .dept-mini-bars{display:flex;gap:2px;margin-top:4px}
 .dept-mini-bar{height:3px;border-radius:999px;min-width:4px}
 /* CHART CANVAS */
-#barChart{max-height:220px}
+#barChart{max-height:130px}
 #pieChart{max-height:100%;width:100%!important;height:100%!important}
 /* MANAGEMENT MODALS */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:100;display:none;align-items:center;justify-content:center}
@@ -192,11 +192,11 @@ tbody tr:hover{background:rgba(255,255,255,.02)}
 
   <div class="nav-section">
     <div class="nav-label">Management</div>
-    <button class="nav-item" onclick="openModal('dept-modal')">
-      <span class="icon">⌂</span> Add Department
+    <button class="nav-item" onclick="showSection('departments-tab-section')" id="nav-departments">
+      <span class="icon">⌂</span> Departments
     </button>
-    <button class="nav-item" onclick="openModal('section-modal')">
-      <span class="icon">☰</span> Add Section
+    <button class="nav-item" onclick="showSection('sections-tab-section')" id="nav-sections">
+      <span class="icon">☰</span> Sections
     </button>
     <button class="nav-item" onclick="showSection('options-section')" id="nav-options">
       <span class="icon">⚙</span> Create Options
@@ -282,135 +282,135 @@ tbody tr:hover{background:rgba(255,255,255,.02)}
 
     <!-- ── TAB CONTENT ─────────────────────────────────────────── -->
     <div id="dashboard-section" class="tab-section">
-      <!-- ── STATS ───────────────────────────────────────────────── -->
-      <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-label">Total reactions</div>
-        <div class="stat-value" id="s-total">—</div>
-        <div class="stat-badge" id="s-participation-badge">—% rate</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Satisfied</div>
-        <div class="stat-value green" id="s-satisfied">—%</div>
-        <div class="stat-sub">Excellent + Good</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Participation rate</div>
-        <div class="stat-value" id="s-participation">—%</div>
-        <div class="stat-sub" id="s-employees">— employees</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Top reaction</div>
-        <div class="stat-value green" id="s-top-reaction">—</div>
-        <div class="stat-sub" id="s-top-detail">— reactions</div>
-      </div>
-    </div>
 
-    <!-- ── CHARTS ROW 1 ────────────────────────────────────────── -->
-    <div class="grid-2">
-      <!-- Reactions Breakdown -->
-      <div class="card">
-        <div class="card-title">Reactions breakdown <span id="breakdown-period">today</span></div>
-        <div class="breakdown-list" id="breakdown-list">
-          <div style="color:var(--dim);font-size:13px;padding:20px 0;text-align:center">Loading...</div>
+      <!-- ROW 1: Stats Cards (4) -->
+      <div class="stats-grid" style="margin-bottom:10px">
+        <div class="stat-card" style="padding:10px 12px">
+          <div class="stat-label" style="font-size:10px;margin-bottom:2px">Total reactions</div>
+          <div class="stat-value" id="s-total" style="font-size:20px;font-weight:700">—</div>
+          <div class="stat-badge" id="s-participation-badge" style="font-size:9px;padding:1px 4px;margin-top:2px">—% rate</div>
+        </div>
+        <div class="stat-card" style="padding:10px 12px">
+          <div class="stat-label" style="font-size:10px;margin-bottom:2px">Satisfied</div>
+          <div class="stat-value green" id="s-satisfied" style="font-size:20px;font-weight:700">—%</div>
+          <div class="stat-sub" style="font-size:10px">Excellent + Good</div>
+        </div>
+        <div class="stat-card" style="padding:10px 12px">
+          <div class="stat-label" style="font-size:10px;margin-bottom:2px">Participation rate</div>
+          <div class="stat-value" id="s-participation" style="font-size:20px;font-weight:700">—%</div>
+          <div class="stat-sub" id="s-employees" style="font-size:10px">— employees</div>
+        </div>
+        <div class="stat-card" style="padding:10px 12px">
+          <div class="stat-label" style="font-size:10px;margin-bottom:2px">Top reaction</div>
+          <div class="stat-value green" id="s-top-reaction" style="font-size:18px;font-weight:700">—</div>
+          <div class="stat-sub" id="s-top-detail" style="font-size:10px">— reactions</div>
         </div>
       </div>
 
-    </div>
-
-    <!-- ── PIE CHART ROW ──────────────────────────────────────────────────── -->
-    <div style="display:grid;grid-template-columns:320px 1fr;gap:16px;margin-bottom:20px">
-      <!-- Pie Chart Card -->
-      <div class="card" style="display:flex;flex-direction:column;align-items:center">
-        <div class="card-title" style="width:100%">Reaction Distribution</div>
-        <div style="width:260px;height:260px;position:relative">
-          <canvas id="pieChart"></canvas>
-        </div>
-        <div id="pie-legend" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center"></div>
-      </div>
-
-      <!-- Top Reaction & Participation -->
-      <div class="card">
-        <div class="card-title">Top reaction</div>
-        <div style="display:flex;flex-direction:column;gap:16px">
-          <div class="top-react-badge">
-            <div class="top-react-icon" id="top-icon">😊</div>
-            <div class="top-react-info">
-              <p>Top reaction</p>
-              <h3 id="top-name">—</h3>
-              <span id="top-count">— responses</span>
-            </div>
-            <div style="margin-left:auto;font-size:28px;font-weight:800;color:var(--green)" id="top-pct">—%</div>
+      <!-- ROW 2: Reaction breakdown & Top reaction -->
+      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:10px;margin-bottom:10px">
+        <!-- Reaction breakdown -->
+        <div class="card" style="padding:12px">
+          <div class="card-title" style="margin-bottom:10px;font-size:12px">Reaction breakdown <span id="breakdown-period" style="font-size:10px">today</span></div>
+          <div class="breakdown-list" id="breakdown-list" style="gap:6px">
+            <div style="color:var(--dim);font-size:12px;padding:10px 0;text-align:center">Loading...</div>
           </div>
-          <div>
-            <div style="display:flex;justify-content:space-between;margin-bottom:8px">
-              <div>
-                <div style="font-size:11px;color:var(--muted);margin-bottom:2px">Participation</div>
-                <div style="font-size:19px;font-weight:800;color:var(--text)" id="part-label">—% participated</div>
+        </div>
+
+        <!-- Top reaction (with participation details) -->
+        <div class="card" style="padding:12px">
+          <div class="card-title" style="margin-bottom:10px;font-size:12px">Top reaction</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div class="top-react-badge" style="padding:8px 10px">
+              <div class="top-react-icon" id="top-icon" style="width:32px;height:32px;font-size:16px">😊</div>
+              <div class="top-react-info">
+                <p style="font-size:9px;margin-bottom:1px">Top reaction</p>
+                <h3 id="top-name" style="font-size:14px;font-weight:700;color:var(--green)">—</h3>
+                <span id="top-count" style="font-size:10px;color:var(--dim)">— responses</span>
               </div>
-              <div style="font-size:13px;color:var(--dim);align-self:flex-end" id="part-employees">— total</div>
+              <div style="margin-left:auto;font-size:18px;font-weight:800;color:var(--green)" id="top-pct">—%</div>
             </div>
-            <div class="participation-bar-bg">
-              <div class="participation-bar-fill" id="part-bar" style="width:0%"></div>
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4px">
+                <div>
+                  <div style="font-size:9px;color:var(--muted);margin-bottom:1px">Participation</div>
+                  <div style="font-size:14px;font-weight:800;color:var(--text)" id="part-label">—% participated</div>
+                </div>
+                <div style="font-size:11px;color:var(--dim)" id="part-employees">— total</div>
+              </div>
+              <div class="participation-bar-bg" style="margin-top:0">
+                <div class="participation-bar-fill" id="part-bar" style="width:0%"></div>
+              </div>
+            </div>
+            <div class="breakdown-list" id="breakdown-list-2" style="margin-top:4px;gap:6px"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 3: Reaction distribution, Daily trend, By department -->
+      <div style="display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:10px;margin-bottom:10px">
+        <!-- Reaction distribution (Pie Chart) -->
+        <div class="card" style="padding:12px;display:flex;flex-direction:column;align-items:center">
+          <div class="card-title" style="margin-bottom:8px;font-size:12px;width:100%">Reaction distribution</div>
+          <div style="width:120px;height:120px;position:relative">
+            <canvas id="pieChart"></canvas>
+          </div>
+          <div id="pie-legend" style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;justify-content:center"></div>
+        </div>
+
+        <!-- Daily trend (Bar Chart) -->
+        <div class="card" style="padding:12px">
+          <div class="card-title" style="margin-bottom:8px;font-size:12px">
+            Daily trend
+            <div id="bar-legend" style="display:flex;flex-wrap:wrap;gap:6px;font-size:10px;font-weight:400;color:var(--muted)"></div>
+          </div>
+          <div style="height:120px;position:relative">
+            <canvas id="barChart" style="max-height:120px"></canvas>
+          </div>
+        </div>
+
+        <!-- By department -->
+        <div class="card" style="padding:12px">
+          <div class="card-title" style="margin-bottom:6px;font-size:12px">By department</div>
+          <div class="dept-list" id="dept-list" style="gap:2px">
+            <div style="color:var(--dim);font-size:12px;padding:6px 0;text-align:center">Loading...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROW 4: Option Submissions & Option Breakdown -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <!-- Option Submissions -->
+        <div class="card" style="padding:12px">
+          <div class="card-title" style="margin-bottom:8px;font-size:12px">📋 Option Submissions <span id="or-period-label">today</span></div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+            <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);border-radius:6px;padding:6px 8px">
+              <div style="font-size:8px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.4px">Total Submissions</div>
+              <div style="font-size:18px;font-weight:800;color:var(--green);margin-top:2px" id="or-total">—</div>
+            </div>
+            <div style="background:rgba(107,114,128,.08);border:1px solid rgba(107,114,128,.15);border-radius:6px;padding:6px 8px">
+              <div style="font-size:8px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.4px">No Selection</div>
+              <div style="font-size:18px;font-weight:800;color:var(--muted);margin-top:2px" id="or-no-sel">—</div>
+            </div>
+            <div style="background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.15);border-radius:6px;padding:6px 8px;overflow:hidden">
+              <div style="font-size:8px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.4px">Most Selected</div>
+              <div style="font-size:12px;font-weight:700;color:var(--blue);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" id="or-top">—</div>
+            </div>
+            <div style="background:rgba(234,179,8,.08);border:1px solid rgba(234,179,8,.15);border-radius:6px;padding:6px 8px">
+              <div style="font-size:8px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.4px">Participation</div>
+              <div style="font-size:18px;font-weight:800;color:var(--yellow);margin-top:2px" id="or-part">—%</div>
             </div>
           </div>
-          <!-- Breakdown summary -->
-          <div class="breakdown-list" id="breakdown-list-2" style="margin-top:4px"></div>
         </div>
-      </div>
-    </div>
 
-    <!-- ── CHARTS ROW 2 ────────────────────────────────────────── -->
-    <div class="grid-3">
-      <!-- Daily Trend Bar Chart -->
-      <div class="card">
-        <div class="card-title">
-          Daily trend
-          <div id="bar-legend" style="display:flex;flex-wrap:wrap;gap:10px;font-size:11px;font-weight:400;color:var(--muted)"></div>
-        </div>
-        <canvas id="barChart"></canvas>
-      </div>
-
-      <!-- By Department -->
-      <div class="card">
-        <div class="card-title">By department</div>
-        <div class="dept-list" id="dept-list">
-          <div style="color:var(--dim);font-size:13px;padding:10px 0;text-align:center">Loading...</div>
-        </div>
-      </div>
-      </div>
-    </div>
-
-    <!-- ── OPTIONS ANALYTICS (integrated into dashboard) ──── -->
-    <div class="grid-2" style="margin-top:0">
-      <!-- Option Stat Cards -->
-      <div class="card">
-        <div class="card-title">📋 Option Submissions <span id="or-period-label">today</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
-          <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);border-radius:8px;padding:12px 14px">
-            <div style="font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px">Total Submissions</div>
-            <div style="font-size:22px;font-weight:800;color:var(--green);margin-top:4px" id="or-total">—</div>
-          </div>
-          <div style="background:rgba(107,114,128,.08);border:1px solid rgba(107,114,128,.15);border-radius:8px;padding:12px 14px">
-            <div style="font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px">No Selection</div>
-            <div style="font-size:22px;font-weight:800;color:var(--muted);margin-top:4px" id="or-no-sel">—</div>
-          </div>
-          <div style="background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.15);border-radius:8px;padding:12px 14px">
-            <div style="font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px">Most Selected</div>
-            <div style="font-size:15px;font-weight:700;color:var(--blue);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" id="or-top">—</div>
-          </div>
-          <div style="background:rgba(234,179,8,.08);border:1px solid rgba(234,179,8,.15);border-radius:8px;padding:12px 14px">
-            <div style="font-size:10px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px">Participation</div>
-            <div style="font-size:22px;font-weight:800;color:var(--yellow);margin-top:4px" id="or-part">—%</div>
+        <!-- Option Breakdown -->
+        <div class="card" style="padding:12px">
+          <div class="card-title" style="margin-bottom:8px;font-size:12px">Option Breakdown</div>
+          <div class="breakdown-list" id="or-breakdown" style="gap:6px">
+            <div style="color:var(--dim);font-size:12px;padding:10px 0;text-align:center">Loading...</div>
           </div>
         </div>
       </div>
-      <!-- Option Breakdown Bars -->
-      <div class="card">
-        <div class="card-title">Option Breakdown</div>
-        <div class="breakdown-list" id="or-breakdown"><div style="color:var(--dim);font-size:13px;padding:20px 0;text-align:center">Loading...</div></div>
-      </div>
-    </div>
 
     </div><!-- /dashboard-section -->
 
@@ -487,6 +487,96 @@ tbody tr:hover{background:rgba(255,255,255,.02)}
       </div>
     </div><!-- /options-section -->
 
+    <!-- ── DEPARTMENTS MANAGEMENT SECTION ─────────────────────── -->
+    <div id="departments-tab-section" class="tab-section" style="display:none">
+      <!-- Add Department Card -->
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-title">⌂ Departments Management <span>Manage all departments of the organization</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap">
+          <div class="filter-group" style="flex:1;min-width:200px">
+            <label>Department Name</label>
+            <input type="text" id="dept-name-input-tab" placeholder="e.g. Human Resources" style="width:100%;height:auto;padding:10px 14px;font-size:14px">
+          </div>
+          <button class="btn-apply" id="dept-save-btn-tab" onclick="saveDepartmentFromTab()" style="height:42px;padding:0 24px;font-size:13px">➕ Save Department</button>
+        </div>
+        <div id="dept-form-error-tab" style="display:none;margin-top:10px;color:var(--red);font-size:12px"></div>
+      </div>
+
+      <!-- Departments Table Card -->
+      <div class="card" style="padding:0;overflow:hidden">
+        <div class="card-title" style="padding:18px 20px;margin:0;border-bottom:1px solid var(--border)">
+          Departments List
+          <span id="departments-count" style="font-size:11px;color:var(--dim)">Loading...</span>
+        </div>
+        <div class="table-wrapper">
+          <table id="departments-table">
+            <thead>
+              <tr>
+                <th style="width:60px">#</th>
+                <th>Department Name</th>
+                <th style="width:120px">Status</th>
+                <th style="width:150px">Created Date</th>
+                <th style="width:130px;text-align:center">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="departments-tbody">
+              <tr><td colspan="5" style="text-align:center;padding:30px;color:var(--muted)">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- /departments-tab-section -->
+
+    <!-- ── SECTIONS MANAGEMENT SECTION ─────────────────────── -->
+    <div id="sections-tab-section" class="tab-section" style="display:none">
+      <!-- Add Section Card -->
+      <div class="card" style="margin-bottom:16px">
+        <div class="card-title">☰ Sections Management <span>Manage sections under departments</span></div>
+        <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap">
+          <div class="filter-group" style="width:250px">
+            <label>Select Department</label>
+            <select id="section-dept-select-tab" style="width:100%;height:42px;padding:0 14px;font-size:14px;border:1px solid var(--border2);border-radius:6px;background:var(--surface2);color:var(--text)">
+              <option value="">-- Select Department --</option>
+              @foreach($departments as $dept)
+              <option value="{{ $dept->id }}">{{ $dept->name }}</option>
+              @endforeach
+            </select>
+          </div>
+          <div class="filter-group" style="flex:1;min-width:200px">
+            <label>Section Name</label>
+            <input type="text" id="section-name-input-tab" placeholder="e.g. Payroll" style="width:100%;height:auto;padding:10px 14px;font-size:14px">
+          </div>
+          <button class="btn-apply" id="section-save-btn-tab" onclick="saveSectionFromTab()" style="height:42px;padding:0 24px;font-size:13px">➕ Save Section</button>
+        </div>
+        <div id="section-form-error-tab" style="display:none;margin-top:10px;color:var(--red);font-size:12px"></div>
+      </div>
+
+      <!-- Sections Table Card -->
+      <div class="card" style="padding:0;overflow:hidden">
+        <div class="card-title" style="padding:18px 20px;margin:0;border-bottom:1px solid var(--border)">
+          Sections List
+          <span id="sections-count" style="font-size:11px;color:var(--dim)">Loading...</span>
+        </div>
+        <div class="table-wrapper">
+          <table id="sections-table">
+            <thead>
+              <tr>
+                <th style="width:60px">#</th>
+                <th>Section Name</th>
+                <th>Department</th>
+                <th style="width:120px">Status</th>
+                <th style="width:150px">Created Date</th>
+                <th style="width:130px;text-align:center">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="sections-tbody">
+              <tr><td colspan="6" style="text-align:center;padding:30px;color:var(--muted)">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- /sections-tab-section -->
+
   </div><!-- /content -->
 </main>
 
@@ -539,6 +629,43 @@ tbody tr:hover{background:rgba(255,255,255,.02)}
   </div>
 </div>
 
+<!-- Edit Department Modal -->
+<div class="modal-overlay" id="dept-edit-modal" onclick="closeModalOutside(event,'dept-edit-modal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('dept-edit-modal')">✕</button>
+    <h3>✏️ Edit Department</h3>
+    <input type="hidden" id="edit-dept-id">
+    <label>Department Name</label>
+    <input type="text" id="edit-dept-name" placeholder="e.g. Human Resources">
+    <div class="modal-actions">
+      <button class="btn-modal-cancel" onclick="closeModal('dept-edit-modal')">Cancel</button>
+      <button class="btn-modal-save" onclick="updateDepartment()">Update Department</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Section Modal -->
+<div class="modal-overlay" id="section-edit-modal" onclick="closeModalOutside(event,'section-edit-modal')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('section-edit-modal')">✕</button>
+    <h3>✏️ Edit Section</h3>
+    <input type="hidden" id="edit-section-id">
+    <label>Select Department</label>
+    <select id="edit-section-dept-id" style="width:100%;height:42px;padding:0 14px;font-size:14px;border:1px solid var(--border2);border-radius:6px;background:var(--surface2);color:var(--text);margin-bottom:12px">
+      <option value="">-- Select Department --</option>
+      @foreach($departments as $dept)
+      <option value="{{ $dept->id }}">{{ $dept->name }}</option>
+      @endforeach
+    </select>
+    <label>Section Name</label>
+    <input type="text" id="edit-section-name" placeholder="e.g. Payroll">
+    <div class="modal-actions">
+      <button class="btn-modal-cancel" onclick="closeModal('section-edit-modal')">Cancel</button>
+      <button class="btn-modal-save" onclick="updateSection()">Update Section</button>
+    </div>
+  </div>
+</div>
+
 <!-- TOAST -->
 <div class="toast" id="toast"><span class="t-icon">✓</span><span id="toast-msg"></span></div>
 
@@ -552,7 +679,9 @@ const ROUTES = {
   bar:    '{{ route("dashboard.bar") }}',
   dept:   '{{ route("dashboard.dept") }}',
   sections: '{{ route("dashboard.sections") }}',
+  deptIndex: '{{ route("departments.index") }}',
   deptStore: '{{ route("departments.store") }}',
+  sectIndex: '{{ route("sections.index") }}',
   sectStore: '{{ route("sections.store") }}',
   export: '{{ route("export") }}',
   logs:   '{{ route("dashboard.logs") }}',
@@ -937,6 +1066,8 @@ function showSection(id){
   if(btn) btn.classList.add('active');
   if (id === 'reports-section') { loadLogs(currentPage); }
   if (id === 'options-section') { loadOptions(); }
+  if (id === 'departments-tab-section') { loadDepartments(); }
+  if (id === 'sections-tab-section') { loadSections(); }
 }
 
 // ═══════════════════════════════════════════════════
@@ -1042,10 +1173,14 @@ async function updateOption() {
   const name = document.getElementById('edit-option-name').value.trim();
   if (!name) return toast('Option name is required.', 'error');
   try {
-    const res = await fetch(`/options/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
-      body: JSON.stringify({ name })
+    const res = await fetch(`/options/${id}?_method=PUT`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json', 
+        'X-CSRF-TOKEN': CSRF,
+        'X-HTTP-Method-Override': 'PUT'
+      },
+      body: JSON.stringify({ name, _method: 'PUT' })
     });
     const d = await res.json();
     if (d.success) {
@@ -1063,9 +1198,14 @@ async function updateOption() {
 async function deleteOption(id) {
   if (!confirm('Are you sure you want to delete this option? This action cannot be undone.')) return;
   try {
-    const res = await fetch(`/options/${id}`, {
-      method: 'DELETE',
-      headers: { 'X-CSRF-TOKEN': CSRF }
+    const res = await fetch(`/options/${id}?_method=DELETE`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'X-CSRF-TOKEN': CSRF,
+        'X-HTTP-Method-Override': 'DELETE'
+      },
+      body: JSON.stringify({ _method: 'DELETE' })
     });
     const d = await res.json();
     if (d.success) {
@@ -1085,10 +1225,14 @@ async function deleteOption(id) {
 async function toggleOptionStatus(id, currentActive) {
   const newStatus = currentActive === 1 ? 0 : 1;
   try {
-    const res = await fetch(`/options/${id}/toggle`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
-      body: JSON.stringify({ is_active: newStatus })
+    const res = await fetch(`/options/${id}/toggle?_method=PATCH`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json', 
+        'X-CSRF-TOKEN': CSRF,
+        'X-HTTP-Method-Override': 'PATCH'
+      },
+      body: JSON.stringify({ is_active: newStatus, _method: 'PATCH' })
     });
     const d = await res.json();
     if (d.success) {
@@ -1102,6 +1246,404 @@ async function toggleOptionStatus(id, currentActive) {
   }
 }
 
+// ═══════════════════════════════════════════════════
+// DEPARTMENTS MANAGEMENT
+// ═══════════════════════════════════════════════════
+async function loadDepartments() {
+  const tbody = document.getElementById('departments-tbody');
+  const countEl = document.getElementById('departments-count');
+  tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--muted)">Loading...</td></tr>';
+  try {
+    const res = await fetch(ROUTES.deptIndex);
+    const departments = await res.json();
+    countEl.textContent = departments.length + ' total';
+    if (!departments || departments.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--dim)">No departments found. Add one above.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = departments.map(dept => {
+      const isActive = dept.is_active == 1 || dept.is_active === true;
+      const statusColor = isActive ? 'var(--green)' : 'var(--red)';
+      const statusBg   = isActive ? 'rgba(34,197,94,.12)' : 'rgba(239,68,68,.12)';
+      const statusBdr  = isActive ? 'rgba(34,197,94,.25)' : 'rgba(239,68,68,.25)';
+      const createdAt = dept.created_at ? dept.created_at.split('T')[0] : '-';
+      return `
+        <tr id="dept-row-${dept.id}">
+          <td style="color:var(--dim);font-weight:600">${dept.id}</td>
+          <td style="font-weight:500;color:var(--text)">${escHtml(dept.name)}</td>
+          <td>
+            <span
+              class="react-badge"
+              style="background:${statusBg};color:${statusColor};border:1px solid ${statusBdr};cursor:pointer"
+              onclick="toggleDepartmentStatus(${dept.id}, ${isActive ? 1 : 0})"
+              title="Click to toggle status"
+            >
+              ${isActive ? '● Active' : '○ Inactive'}
+            </span>
+          </td>
+          <td style="color:var(--muted)">${createdAt}</td>
+          <td style="text-align:center">
+            <div style="display:flex;gap:6px;justify-content:center">
+              <button
+                onclick="editDepartment(${dept.id}, '${escJs(dept.name)}')"
+                style="background:rgba(59,130,246,.15);color:var(--blue);border:1px solid rgba(59,130,246,.25);border-radius:6px;padding:5px 10px;font-size:11px;cursor:pointer;transition:.15s"
+                onmouseover="this.style.background='rgba(59,130,246,.3)'"
+                onmouseout="this.style.background='rgba(59,130,246,.15)'"
+              >✏ Edit</button>
+              <button
+                onclick="deleteDepartment(${dept.id})"
+                style="background:rgba(239,68,68,.12);color:var(--red);border:1px solid rgba(239,68,68,.25);border-radius:6px;padding:5px 10px;font-size:11px;cursor:pointer;transition:.15s"
+                onmouseover="this.style.background='rgba(239,68,68,.25)'"
+                onmouseout="this.style.background='rgba(239,68,68,.12)'"
+              >✕ Delete</button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  } catch(e) {
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:30px;color:var(--red)">Failed to load departments.</td></tr>';
+    console.error(e);
+  }
+}
+
+async function saveDepartmentFromTab() {
+  const nameInput = document.getElementById('dept-name-input-tab');
+  const errEl     = document.getElementById('dept-form-error-tab');
+  const saveBtn   = document.getElementById('dept-save-btn-tab');
+  const name = nameInput.value.trim();
+  errEl.style.display = 'none';
+  if (!name) { errEl.textContent = 'Department name is required.'; errEl.style.display = 'block'; return; }
+  saveBtn.disabled = true; saveBtn.textContent = 'Saving...';
+  try {
+    const res = await fetch(ROUTES.deptStore, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
+      body: JSON.stringify({ name })
+    });
+    const d = await res.json();
+    if (d.success) {
+      toast('Department saved successfully!', 'success');
+      nameInput.value = '';
+      loadDepartments();
+      refreshDropdowns();
+      loadByDept();
+    } else {
+      const msg = d.errors && d.errors.name ? d.errors.name[0] : 'Failed to save department.';
+      errEl.textContent = msg; errEl.style.display = 'block';
+    }
+  } catch(e) {
+    errEl.textContent = 'Network error. Please try again.'; errEl.style.display = 'block';
+  } finally {
+    saveBtn.disabled = false; saveBtn.textContent = '➕ Save Department';
+  }
+}
+
+function editDepartment(id, name) {
+  document.getElementById('edit-dept-id').value   = id;
+  document.getElementById('edit-dept-name').value = name;
+  openModal('dept-edit-modal');
+}
+
+async function updateDepartment() {
+  const id   = document.getElementById('edit-dept-id').value;
+  const name = document.getElementById('edit-dept-name').value.trim();
+  if (!name) return toast('Department name is required.', 'error');
+  try {
+    const res = await fetch(`/departments/${id}?_method=PUT`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json', 
+        'X-CSRF-TOKEN': CSRF,
+        'X-HTTP-Method-Override': 'PUT'
+      },
+      body: JSON.stringify({ name, _method: 'PUT' })
+    });
+    const d = await res.json();
+    if (d.success) {
+      toast('Department updated!', 'success');
+      closeModal('dept-edit-modal');
+      loadDepartments();
+      refreshDropdowns();
+      loadByDept();
+    } else {
+      toast('Failed to update department.', 'error');
+    }
+  } catch(e) {
+    toast('Network error. Please try again.', 'error');
+  }
+}
+
+async function deleteDepartment(id) {
+  if (!confirm('Are you sure you want to delete this department? This will delete or decouple sections, employees and logs associated with it.')) return;
+  try {
+    const res = await fetch(`/departments/${id}?_method=DELETE`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'X-CSRF-TOKEN': CSRF,
+        'X-HTTP-Method-Override': 'DELETE'
+      },
+      body: JSON.stringify({ _method: 'DELETE' })
+    });
+    const d = await res.json();
+    if (d.success) {
+      toast('Department deleted.', 'success');
+      const row = document.getElementById('dept-row-' + id);
+      if (row) { row.style.opacity = '0'; row.style.transition = 'opacity .3s'; setTimeout(() => { loadDepartments(); loadByDept(); }, 300); }
+      else { loadDepartments(); loadByDept(); }
+      refreshDropdowns();
+    } else {
+      toast('Failed to delete department.', 'error');
+    }
+  } catch(e) {
+    toast('Network error. Please try again.', 'error');
+  }
+}
+
+async function toggleDepartmentStatus(id, currentActive) {
+  const newStatus = currentActive === 1 ? 0 : 1;
+  try {
+    const res = await fetch(`/departments/${id}/toggle?_method=PATCH`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json', 
+        'X-CSRF-TOKEN': CSRF,
+        'X-HTTP-Method-Override': 'PATCH'
+      },
+      body: JSON.stringify({ is_active: newStatus, _method: 'PATCH' })
+    });
+    const d = await res.json();
+    if (d.success) {
+      toast(newStatus ? 'Department activated!' : 'Department deactivated.', 'success');
+      loadDepartments();
+      refreshDropdowns();
+      loadByDept();
+    } else {
+      toast('Failed to update status.', 'error');
+    }
+  } catch(e) {
+    toast('Network error. Please try again.', 'error');
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// SECTIONS MANAGEMENT
+// ═══════════════════════════════════════════════════
+async function loadSections() {
+  const tbody = document.getElementById('sections-tbody');
+  const countEl = document.getElementById('sections-count');
+  tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--muted)">Loading...</td></tr>';
+  try {
+    const res = await fetch(ROUTES.sectIndex);
+    const sections = await res.json();
+    countEl.textContent = sections.length + ' total';
+    if (!sections || sections.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--dim)">No sections found. Add one above.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = sections.map(sect => {
+      const isActive = sect.is_active == 1 || sect.is_active === true;
+      const statusColor = isActive ? 'var(--green)' : 'var(--red)';
+      const statusBg   = isActive ? 'rgba(34,197,94,.12)' : 'rgba(239,68,68,.12)';
+      const statusBdr  = isActive ? 'rgba(34,197,94,.25)' : 'rgba(239,68,68,.25)';
+      const createdAt = sect.created_at ? sect.created_at.split('T')[0] : '-';
+      const deptName = sect.department ? sect.department.name : 'Unknown Department';
+      return `
+        <tr id="section-row-${sect.id}">
+          <td style="color:var(--dim);font-weight:600">${sect.id}</td>
+          <td style="font-weight:500;color:var(--text)">${escHtml(sect.name)}</td>
+          <td style="color:var(--muted)">${escHtml(deptName)}</td>
+          <td>
+            <span
+              class="react-badge"
+              style="background:${statusBg};color:${statusColor};border:1px solid ${statusBdr};cursor:pointer"
+              onclick="toggleSectionStatus(${sect.id}, ${isActive ? 1 : 0})"
+              title="Click to toggle status"
+            >
+              ${isActive ? '● Active' : '○ Inactive'}
+            </span>
+          </td>
+          <td style="color:var(--muted)">${createdAt}</td>
+          <td style="text-align:center">
+            <div style="display:flex;gap:6px;justify-content:center">
+              <button
+                onclick="editSection(${sect.id}, '${escJs(sect.name)}', ${sect.department_id})"
+                style="background:rgba(59,130,246,.15);color:var(--blue);border:1px solid rgba(59,130,246,.25);border-radius:6px;padding:5px 10px;font-size:11px;cursor:pointer;transition:.15s"
+                onmouseover="this.style.background='rgba(59,130,246,.3)'"
+                onmouseout="this.style.background='rgba(59,130,246,.15)'"
+              >✏ Edit</button>
+              <button
+                onclick="deleteSection(${sect.id})"
+                style="background:rgba(239,68,68,.12);color:var(--red);border:1px solid rgba(239,68,68,.25);border-radius:6px;padding:5px 10px;font-size:11px;cursor:pointer;transition:.15s"
+                onmouseover="this.style.background='rgba(239,68,68,.25)'"
+                onmouseout="this.style.background='rgba(239,68,68,.12)'"
+              >✕ Delete</button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  } catch(e) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--red)">Failed to load sections.</td></tr>';
+    console.error(e);
+  }
+}
+
+async function saveSectionFromTab() {
+  const nameInput = document.getElementById('section-name-input-tab');
+  const deptSelect = document.getElementById('section-dept-select-tab');
+  const errEl     = document.getElementById('section-form-error-tab');
+  const saveBtn   = document.getElementById('section-save-btn-tab');
+  const name   = nameInput.value.trim();
+  const deptId = deptSelect.value;
+  errEl.style.display = 'none';
+  if (!deptId) { errEl.textContent = 'Department must be selected.'; errEl.style.display = 'block'; return; }
+  if (!name) { errEl.textContent = 'Section name is required.'; errEl.style.display = 'block'; return; }
+  saveBtn.disabled = true; saveBtn.textContent = 'Saving...';
+  try {
+    const res = await fetch(ROUTES.sectStore, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
+      body: JSON.stringify({ name, department_id: deptId })
+    });
+    const d = await res.json();
+    if (d.success) {
+      toast('Section saved successfully!', 'success');
+      nameInput.value = '';
+      deptSelect.value = '';
+      loadSections();
+    } else {
+      const msg = d.errors && d.errors.name ? d.errors.name[0] : 'Failed to save section.';
+      errEl.textContent = msg; errEl.style.display = 'block';
+    }
+  } catch(e) {
+    errEl.textContent = 'Network error. Please try again.'; errEl.style.display = 'block';
+  } finally {
+    saveBtn.disabled = false; saveBtn.textContent = '➕ Save Section';
+  }
+}
+
+function editSection(id, name, deptId) {
+  document.getElementById('edit-section-id').value   = id;
+  document.getElementById('edit-section-name').value = name;
+  document.getElementById('edit-section-dept-id').value = deptId;
+  openModal('section-edit-modal');
+}
+
+async function updateSection() {
+  const id     = document.getElementById('edit-section-id').value;
+  const name   = document.getElementById('edit-section-name').value.trim();
+  const deptId = document.getElementById('edit-section-dept-id').value;
+  if (!deptId) return toast('Department must be selected.', 'error');
+  if (!name) return toast('Section name is required.', 'error');
+  try {
+    const res = await fetch(`/sections/${id}?_method=PUT`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json', 
+        'X-CSRF-TOKEN': CSRF,
+        'X-HTTP-Method-Override': 'PUT'
+      },
+      body: JSON.stringify({ name, department_id: deptId, _method: 'PUT' })
+    });
+    const d = await res.json();
+    if (d.success) {
+      toast('Section updated!', 'success');
+      closeModal('section-edit-modal');
+      loadSections();
+    } else {
+      toast('Failed to update section.', 'error');
+    }
+  } catch(e) {
+    toast('Network error. Please try again.', 'error');
+  }
+}
+
+async function deleteSection(id) {
+  if (!confirm('Are you sure you want to delete this section? This action cannot be undone.')) return;
+  try {
+    const res = await fetch(`/sections/${id}?_method=DELETE`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'X-CSRF-TOKEN': CSRF,
+        'X-HTTP-Method-Override': 'DELETE'
+      },
+      body: JSON.stringify({ _method: 'DELETE' })
+    });
+    const d = await res.json();
+    if (d.success) {
+      toast('Section deleted.', 'success');
+      const row = document.getElementById('section-row-' + id);
+      if (row) { row.style.opacity = '0'; row.style.transition = 'opacity .3s'; setTimeout(() => loadSections(), 300); }
+      else loadSections();
+    } else {
+      toast('Failed to delete section.', 'error');
+    }
+  } catch(e) {
+    toast('Network error. Please try again.', 'error');
+  }
+}
+
+async function toggleSectionStatus(id, currentActive) {
+  const newStatus = currentActive === 1 ? 0 : 1;
+  try {
+    const res = await fetch(`/sections/${id}/toggle?_method=PATCH`, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json', 
+        'X-CSRF-TOKEN': CSRF,
+        'X-HTTP-Method-Override': 'PATCH'
+      },
+      body: JSON.stringify({ is_active: newStatus, _method: 'PATCH' })
+    });
+    const d = await res.json();
+    if (d.success) {
+      toast(newStatus ? 'Section activated!' : 'Section deactivated.', 'success');
+      loadSections();
+    } else {
+      toast('Failed to update status.', 'error');
+    }
+  } catch(e) {
+    toast('Network error. Please try again.', 'error');
+  }
+}
+
+// Rebuild/refresh all department dropdown select elements in UI
+async function refreshDropdowns() {
+  try {
+    const res = await fetch(ROUTES.deptIndex);
+    const departments = await res.json();
+    const activeDepts = departments.filter(d => d.is_active == 1 || d.is_active === true);
+    const dropdownIds = [
+      'f-dept', 
+      'section-dept-select', 
+      'section-dept-select-tab', 
+      'edit-section-dept-id'
+    ];
+    dropdownIds.forEach(id => {
+      const selectEl = document.getElementById(id);
+      if (!selectEl) return;
+      const currentVal = selectEl.value;
+      const firstOpt = selectEl.options[0];
+      selectEl.innerHTML = '';
+      if (firstOpt) {
+        selectEl.appendChild(firstOpt);
+      }
+      activeDepts.forEach(dept => {
+        const opt = document.createElement('option');
+        opt.value = dept.id;
+        opt.textContent = dept.name;
+        selectEl.appendChild(opt);
+      });
+      selectEl.value = currentVal;
+    });
+  } catch(e) {
+    console.error('Error refreshing dropdowns', e);
+  }
+}
+
 // Helpers
 function escHtml(str) {
   return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -1110,12 +1652,22 @@ function escJs(str) {
   return String(str).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'\\"');
 }
 
-// Allow Enter key on option input
+// Allow Enter key on inputs
 document.addEventListener('DOMContentLoaded', () => {
   const inp = document.getElementById('option-name-input');
   if (inp) inp.addEventListener('keydown', e => { if (e.key === 'Enter') saveOption(); });
   const editInp = document.getElementById('edit-option-name');
   if (editInp) editInp.addEventListener('keydown', e => { if (e.key === 'Enter') updateOption(); });
+
+  const deptInp = document.getElementById('dept-name-input-tab');
+  if (deptInp) deptInp.addEventListener('keydown', e => { if (e.key === 'Enter') saveDepartmentFromTab(); });
+  const editDeptInp = document.getElementById('edit-dept-name');
+  if (editDeptInp) editDeptInp.addEventListener('keydown', e => { if (e.key === 'Enter') updateDepartment(); });
+
+  const sectInp = document.getElementById('section-name-input-tab');
+  if (sectInp) sectInp.addEventListener('keydown', e => { if (e.key === 'Enter') saveSectionFromTab(); });
+  const editSectInp = document.getElementById('edit-section-name');
+  if (editSectInp) editSectInp.addEventListener('keydown', e => { if (e.key === 'Enter') updateSection(); });
 });
 
 // ═══════════════════════════════════════════════════

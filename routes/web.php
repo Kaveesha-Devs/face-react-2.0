@@ -25,9 +25,19 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/sections',      [DashboardController::class, 'sections'])->name('dashboard.sections');
     Route::get('/dashboard/logs',          [DashboardController::class, 'logs'])->name('dashboard.logs');
 
-    // Management
-    Route::post('/departments', [DashboardController::class, 'storeDepartment'])->name('departments.store');
-    Route::post('/sections',    [DashboardController::class, 'storeSection'])->name('sections.store');
+    // Management - Departments
+    Route::get('/departments',                  [DashboardController::class, 'departmentsIndex'])->name('departments.index');
+    Route::post('/departments',                 [DashboardController::class, 'storeDepartment'])->name('departments.store');
+    Route::put('/departments/{department}',      [DashboardController::class, 'updateDepartment'])->name('departments.update');
+    Route::delete('/departments/{department}',   [DashboardController::class, 'destroyDepartment'])->name('departments.destroy');
+    Route::patch('/departments/{department}/toggle', [DashboardController::class, 'toggleDepartmentStatus'])->name('departments.toggle');
+
+    // Management - Sections
+    Route::get('/sections',                  [DashboardController::class, 'sectionsIndex'])->name('sections.index');
+    Route::post('/sections',                 [DashboardController::class, 'storeSection'])->name('sections.store');
+    Route::put('/sections/{section}',        [DashboardController::class, 'updateSection'])->name('sections.update');
+    Route::delete('/sections/{section}',     [DashboardController::class, 'destroySection'])->name('sections.destroy');
+    Route::patch('/sections/{section}/toggle', [DashboardController::class, 'toggleSectionStatus'])->name('sections.toggle');
 
     // Export
     Route::get('/export', [DashboardController::class, 'export'])->name('export');

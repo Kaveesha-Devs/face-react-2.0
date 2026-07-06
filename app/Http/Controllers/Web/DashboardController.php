@@ -238,6 +238,112 @@ class DashboardController extends Controller
         return response()->json(['success' => true, 'section' => $section]);
     }
 
+    // ── GET: List Departments ────────────────────────────────────────────
+    public function departmentsIndex()
+    {
+        $companyId = $this->getCompanyId();
+        $departments = Department::where('company_id', $companyId)->orderBy('id', 'desc')->get();
+        return response()->json($departments);
+    }
+
+    // ── PUT: Update Department ───────────────────────────────────────────
+    public function updateDepartment(Request $request, Department $department)
+    {
+        if ($department->company_id !== $this->getCompanyId()) {
+            return response()->json(['success' => false, 'message' => 'Unauthorized'], 403);
+        }
+
+        $request->validate(['name' => 'required|string|max:200']);
+        $department->update(['name' => $request->name]);
+
+        return response()->json(['success' => true]);
+    }
+
+    // ── DELETE: Destroy Department ────────────────────────────────────────
+    public function destroyDepartment(Department $department)
+    {
+        if ($department->company_id !== $this->getCompanyId()) {
+            return response()->json(['success' => false, 'message' => 'Unauthorized'], 403);
+        }
+
+        $department->delete();
+
+        return response()->json(['success' => true]);
+    }
+
+    // ── PATCH: Toggle Department Status ──────────────────────────────────
+    public function toggleDepartmentStatus(Department $department)
+    {
+        if ($department->company_id !== $this->getCompanyId()) {
+            return response()->json(['success' => false, 'message' => 'Unauthorized'], 403);
+        }
+
+        $department->update(['is_active' => !$department->is_active]);
+
+        return response()->json(['success' => true, 'is_active' => $department->is_active]);
+    }
+
+    // ── GET: List Sections ───────────────────────────────────────────────
+    public function sectionsIndex()
+    {
+        $companyId = $this->getCompanyId();
+        $sections = Section::whereHas('department', function($q) use ($companyId) {
+            $q->where('company_id', $companyId);
+        })->with('department')->orderBy('id', 'desc')->get();
+
+        return response()->json($sections);
+    }
+
+    // ── PUT: Update Section ──────────────────────────────────────────────
+    public function updateSection(Request $request, Section $section)
+    {
+        $companyId = $this->getCompanyId();
+        if ($section->department->company_id !== $companyId) {
+            return response()->json(['success' => false, 'message' => 'Unauthorized'], 403);
+        }
+
+        $request->validate([
+            'name'          => 'required|string|max:200',
+            'department_id' => 'required|exists:departments,id',
+        ]);
+
+        $newDept = Department::find($request->department_id);
+        if ($newDept->company_id !== $companyId) {
+            return response()->json(['success' => false, 'message' => 'Unauthorized department choice'], 403);
+        }
+
+        $section->update([
+            'name'          => $request->name,
+            'department_id' => $request->department_id
+        ]);
+
+        return response()->json(['success' => true]);
+    }
+
+    // ── DELETE: Destroy Section ──────────────────────────────────────────
+    public function destroySection(Section $section)
+    {
+        if ($section->department->company_id !== $this->getCompanyId()) {
+            return response()->json(['success' => false, 'message' => 'Unauthorized'], 403);
+        }
+
+        $section->delete();
+
+        return response()->json(['success' => true]);
+    }
+
+    // ── PATCH: Toggle Section Status ─────────────────────────────────────
+    public function toggleSectionStatus(Section $section)
+    {
+        if ($section->department->company_id !== $this->getCompanyId()) {
+            return response()->json(['success' => false, 'message' => 'Unauthorized'], 403);
+        }
+
+        $section->update(['is_active' => !$section->is_active]);
+
+        return response()->json(['success' => true, 'is_active' => $section->is_active]);
+    }
+
     // ── GET: Excel Export ────────────────────────────────────────────────
     public function export(Request $request)
     {
