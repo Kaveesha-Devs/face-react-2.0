@@ -687,10 +687,11 @@ const ROUTES = {
   logs:   '{{ route("dashboard.logs") }}',
   optionsIndex:  '{{ route("options.index") }}',
   optionsStore:  '{{ route("options.store") }}',
-  optionsToggle: '/options',
+  optionsToggle: '{{ url("/options") }}',
   optionDashStats: '{{ route("options.dashboard.stats") }}',
 };
 const CSRF = document.querySelector('meta[name="csrf-token"]').content;
+const APP_URL = '{{ url("/") }}';
 let pieChartInst = null, barChartInst = null;
 let refreshTimer = 30, refreshInterval;
 let currentPage = 1;
@@ -1173,7 +1174,7 @@ async function updateOption() {
   const name = document.getElementById('edit-option-name').value.trim();
   if (!name) return toast('Option name is required.', 'error');
   try {
-    const res = await fetch(`/options/${id}/update`, {
+    const res = await fetch(`${APP_URL}/options/${id}/update`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
       body: JSON.stringify({ name })
@@ -1194,7 +1195,7 @@ async function updateOption() {
 async function deleteOption(id) {
   if (!confirm('Are you sure you want to delete this option? This action cannot be undone.')) return;
   try {
-    const res = await fetch(`/options/${id}/delete`, {
+    const res = await fetch(`${APP_URL}/options/${id}/delete`, {
       method: 'POST',
       headers: { 
         'X-CSRF-TOKEN': CSRF
@@ -1218,7 +1219,7 @@ async function deleteOption(id) {
 async function toggleOptionStatus(id, currentActive) {
   const newStatus = currentActive === 1 ? 0 : 1;
   try {
-    const res = await fetch(`/options/${id}/toggle`, {
+    const res = await fetch(`${APP_URL}/options/${id}/toggle`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
       body: JSON.stringify({ is_active: newStatus })
@@ -1339,7 +1340,7 @@ async function updateDepartment() {
   const name = document.getElementById('edit-dept-name').value.trim();
   if (!name) return toast('Department name is required.', 'error');
   try {
-    const res = await fetch(`/departments/${id}/update`, {
+    const res = await fetch(`${APP_URL}/departments/${id}/update`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
       body: JSON.stringify({ name })
@@ -1362,7 +1363,7 @@ async function updateDepartment() {
 async function deleteDepartment(id) {
   if (!confirm('Are you sure you want to delete this department? This will delete or decouple sections, employees and logs associated with it.')) return;
   try {
-    const res = await fetch(`/departments/${id}/delete`, {
+    const res = await fetch(`${APP_URL}/departments/${id}/delete`, {
       method: 'POST',
       headers: { 
         'X-CSRF-TOKEN': CSRF
@@ -1386,7 +1387,7 @@ async function deleteDepartment(id) {
 async function toggleDepartmentStatus(id, currentActive) {
   const newStatus = currentActive === 1 ? 0 : 1;
   try {
-    const res = await fetch(`/departments/${id}/toggle`, {
+    const res = await fetch(`${APP_URL}/departments/${id}/toggle`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
       body: JSON.stringify({ is_active: newStatus })
@@ -1516,7 +1517,7 @@ async function updateSection() {
   if (!deptId) return toast('Department must be selected.', 'error');
   if (!name) return toast('Section name is required.', 'error');
   try {
-    const res = await fetch(`/sections/${id}/update`, {
+    const res = await fetch(`${APP_URL}/sections/${id}/update`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
       body: JSON.stringify({ name, department_id: deptId })
@@ -1537,7 +1538,7 @@ async function updateSection() {
 async function deleteSection(id) {
   if (!confirm('Are you sure you want to delete this section? This action cannot be undone.')) return;
   try {
-    const res = await fetch(`/sections/${id}/delete`, {
+    const res = await fetch(`${APP_URL}/sections/${id}/delete`, {
       method: 'POST',
       headers: { 
         'X-CSRF-TOKEN': CSRF
@@ -1560,7 +1561,7 @@ async function deleteSection(id) {
 async function toggleSectionStatus(id, currentActive) {
   const newStatus = currentActive === 1 ? 0 : 1;
   try {
-    const res = await fetch(`/sections/${id}/toggle`, {
+    const res = await fetch(`${APP_URL}/sections/${id}/toggle`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': CSRF },
       body: JSON.stringify({ is_active: newStatus })
